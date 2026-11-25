@@ -5,6 +5,7 @@ import { LoginPage } from '../pages/LoginPage';
 import { MyAccount } from '../pages/MyAccount'
 import { LogoutPage } from '../pages/LogOutPage';
 import { ForgottonPasswordPage } from '../pages/ForgottonPasswordPage';
+import { ProductDetails } from '../pages/ProductDetails';
 
 
 
@@ -14,9 +15,10 @@ type PageFixtures = {
 
    homePage: Homepage,
    loginPage: LoginPage,
-   myAccountPage: MyAccount;
-   logoutPage: LogoutPage;
-   forgottonPasswordPage:ForgottonPasswordPage;
+   myAccountPage: MyAccount,
+   logoutPage: LogoutPage,
+   forgottonPasswordPage:ForgottonPasswordPage,
+   productDetails: ProductDetails;
 };
 
 export const test = base.extend<PageFixtures>({
@@ -40,10 +42,16 @@ export const test = base.extend<PageFixtures>({
       await use(new LogoutPage(page));
    },
 
-   forgottonPasswordPage: async({page},use)=>{
+   forgottonPasswordPage: async ({ page }, use) => {
       await use(new ForgottonPasswordPage(page));
+   },
+
+   
+   productDetails: async ({ page }, use) => {
+      await use(new ProductDetails(page));
    }
-})
+
+});
 
 export { expect } from '@playwright/test'
 

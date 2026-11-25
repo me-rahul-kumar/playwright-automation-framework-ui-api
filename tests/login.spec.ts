@@ -59,13 +59,12 @@ test("Unregistered or Invalid Email and password @regression @web", async ({ hom
 })
 
 
-test("Blank Email and Blank Password @regression @web", async ({ homePage, loginPage }) => {
+test("Blank Email and Blank Password @regression @web", async ({ homePage, loginPage,page }) => {
 
     await homePage.navigateToLoginPage();
-    expect(await loginPage.isloginInvalidCredentialsWarningMsgVisible()).toBe(true);
+    await loginPage.clickOnLoginButton();
+    expect(await loginPage.isloginInvalidCredentialsWarningMsgVisible()).toBe(true);   
 })
-
-
 
 test("Valid Email with Blank Password @regression @web", async ({ homePage, loginPage }) => {
 

@@ -7,7 +7,7 @@ export class LoginPage
     private readonly passwordInput:Locator;
     private readonly loginButton:Locator;
     private readonly forgottenPasswardLink: Locator;
-    private readonly loginInvalidCredentialsWarningMsg:Locator;
+    public readonly loginInvalidCredentialsWarningMsg:Locator;
 
 
     constructor(page:Page)
